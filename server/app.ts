@@ -13,7 +13,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/podcas
 
 
 app.use(cors({
-  origin: "https://podcast-music-ul8q.vercel.app",
+  origin: "*",
+  
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
