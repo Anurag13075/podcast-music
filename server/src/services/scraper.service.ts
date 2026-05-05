@@ -32,6 +32,7 @@ export const scrapeArticle = async (url: string): Promise<string> => {
       }
     }
 
+
     if (!content) {
       content = $('p').map((_, el) => $(el).text().trim()).get().join(' ');
     }
