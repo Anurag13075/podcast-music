@@ -1,6 +1,8 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IMusic extends Document {
+  id:string,
+
   title: string;
   inputText: string;
   inputUrl?: string;
@@ -19,6 +21,8 @@ export interface IMusic extends Document {
 const MusicSchema = new Schema<IMusic>(
   {
     title: { type: String, required: true },
+    id:{type:String},
+    
     inputText: { type: String, required: true },
     inputUrl: { type: String },
     tone: { type: String, default: 'neutral' },
