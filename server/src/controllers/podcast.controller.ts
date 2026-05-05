@@ -76,6 +76,34 @@ export const generatePodcast = async (req: Request, res: Response) => {
   }
 };
 
+
+
+export const getsinglemusic = async (req :Request, res:Response)=>{
+ try {
+
+ 
+   const music = await Music.findById(req.params.id);
+
+ 
+   if(!music){
+     res.status(404).json({
+       message:"music not found"
+     })
+   }
+
+   
+   return res.status(201).json({
+    music,
+    message:"music found successfully!"
+   })
+ } catch (error) {
+  console.log(error.message);
+
+ }
+
+
+}
+
 // GET /api/music/status/:id
 export const getMusicStatus = async (req: Request, res: Response) => {
   try {
