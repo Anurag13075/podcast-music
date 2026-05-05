@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { getAllMusic } from '../controllers/podcast.controller.ts';
 
 import {
   generatePodcast,
@@ -6,12 +7,18 @@ import {
   getAllMusic,
   deleteMusic,
   checkWubbleHealth
+
+
 } from '../controllers/podcast.controller.ts';
+
+
+
 
 const router = Router();
 router.post('/generate', generatePodcast);
 router.get('/health', checkWubbleHealth);   // moved up
 router.get('/status/:id', getMusicStatus);  // now safe
 router.get('/all', getAllMusic);
+router.get("music/:id", getsinglemusic);
 router.delete('/:id', deleteMusic);
 export default router;
