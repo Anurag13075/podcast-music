@@ -21,6 +21,8 @@ export const scrapeArticle = async (url: string): Promise<string> => {
       $('title').text().trim() ||
       'Article';
 
+
+    console.log(title);
     // Extract main content - try article first, then main, then body
     let content = '';
     const selectors = ['article', 'main', '.post-content', '.article-body', '.content', 'body'];
