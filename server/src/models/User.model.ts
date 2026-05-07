@@ -12,6 +12,10 @@ const userSchema = new mongoose.Schema({
     },
     password: {
 
+    },
+    ISAuthenticated:{
+
+type:Boolean
     }
 })
 
