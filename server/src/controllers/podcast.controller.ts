@@ -21,6 +21,10 @@ export const generatePodcast = async (req: Request, res: Response) => {
 
     // 1. Extract content
     let text = input;
+    if(!text){
+   return
+
+    }
     let inputUrl: string | undefined;
     if (input.startsWith('http://') || input.startsWith('https://')) {
       inputUrl = input;
